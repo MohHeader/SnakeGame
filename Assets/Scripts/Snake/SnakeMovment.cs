@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
-using System.Collections;
+using System.Collections.Generic;
 
 public class SnakeMovment : MonoBehaviour {
 	public GridMap2D grid;
 	Coord cPosition;
 	Coord direction = new Coord(0,0);
+
+	public Queue<Coord> DirectionList = new Queue<Coord>();
 
 	void Start () {
 		MoveTo(new Coord(grid.size.x/2,grid.size.y/2));
@@ -12,6 +14,12 @@ public class SnakeMovment : MonoBehaviour {
 	}
 
 	public void UpdateStep(){
+		if (DirectionList.Count > 0) {
+			Coord dir = DirectionList.Dequeue ();
+			if ((direction + dir).x != 0 || (direction + dir).y != 0) {
+				direction = dir;
+			}
+		}
 		MoveBy (direction);
 	}
 
@@ -33,8 +41,8 @@ public class SnakeMovment : MonoBehaviour {
 	}
 
 	public void SetDirection(Coord dir){
-		if (Mathf.Abs(dir.x + dir.y) == 1 && ((direction + dir).x != 0 || (direction + dir).y != 0))
-			direction = dir;
+		if(Mathf.Abs (dir.x + dir.y) == 1)
+			DirectionList.Enqueue (dir);
 	}
 
 	public event System.Action<Vector3> OnMoved;
