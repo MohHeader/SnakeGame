@@ -98,7 +98,6 @@ GameObject:
   - 114: {fileID: 29252998}
   - 114: {fileID: 29252999}
   - 61: {fileID: 29253000}
-  - 114: {fileID: 29253001}
   - 50: {fileID: 29253002}
   - 114: {fileID: 29253004}
   - 114: {fileID: 29253003}
@@ -201,17 +200,6 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.5}
---- !u!114 &29253001
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 29252994}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d94c6af27763a4f899b4478e0ba0ae62, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!50 &29253002
 Rigidbody2D:
   serializedVersion: 2
@@ -251,9 +239,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef6510c3b39cf4e789e3e58a8d2a46f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parts: []
   InitalParts: 2
-  ToSpawn: 2
   PartPrefap: {fileID: 170010, guid: 6c8cac354e9c344028fa378a8dd7c089, type: 2}
   PartsParent: {fileID: 71560747}
 --- !u!1 &71560746
@@ -355,6 +341,7 @@ GameObject:
   - 114: {fileID: 576781396}
   - 114: {fileID: 576781398}
   - 114: {fileID: 576781399}
+  - 114: {fileID: 576781400}
   m_Layer: 0
   m_Name: Master
   m_TagString: Untagged
@@ -373,8 +360,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d332b103bb40649ddb72cfcedfcd4fc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Snake: {fileID: 29253003}
-  board: {fileID: 1819328805}
 --- !u!4 &576781397
 Transform:
   m_ObjectHideFlags: 0
@@ -414,6 +399,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameOverUI: {fileID: 1388287248}
+--- !u!114 &576781400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 576781395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 782523e7351be437697b3916f92f6dc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Places:
+  - x: 2
+    y: 2
+  - x: 3
+    y: 2
+  - x: 2
+    y: 3
+  - x: 4
+    y: 2
+  grid: {fileID: 1660057196}
+  ObstaclePrefab: {fileID: 110488, guid: 12bd6f9e3d6ad4a7d87835809fa5ffe6, type: 2}
 --- !u!1 &906854688
 GameObject:
   m_ObjectHideFlags: 0

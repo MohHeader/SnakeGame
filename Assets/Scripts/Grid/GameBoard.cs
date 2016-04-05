@@ -17,7 +17,6 @@ public class GameBoard : MonoBehaviour {
 	}
 
 	public void FruitEaten(Fruit f){
-//		(grid.GetCell (coord) as SimpleCell).CellType = SimpleCell.Type.Floor;
 		SpawnFruit ();
 	}
 

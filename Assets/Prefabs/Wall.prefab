@@ -10,6 +10,7 @@ GameObject:
   - 4: {fileID: 478818}
   - 212: {fileID: 21268316}
   - 61: {fileID: 6125842}
+  - 114: {fileID: 11488812}
   m_Layer: 0
   m_Name: Wall
   m_TagString: Collider
@@ -43,6 +44,17 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
+--- !u!114 &11488812
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 110488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee740f9eb912e4c30b68da7cc000d21a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &21268316
 SpriteRenderer:
   m_ObjectHideFlags: 1
