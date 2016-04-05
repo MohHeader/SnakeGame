@@ -10,7 +10,9 @@ public class ScoreMaster : MonoBehaviour {
 
 	void Start(){
 		ResetScore ();
-		GameMaster.Instance.OnFruitEaten += AddScore;
+		GameMaster.Instance.OnFruitEaten += delegate(Fruit obj) {
+			AddScore();
+		};
 		GameMaster.Instance.OnRestart += ResetScore;
 	}
 

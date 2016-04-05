@@ -15,9 +15,9 @@ public class SnakeCollider : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.tag == "Collider")
-			snake.OnCollide (Type.Obstacle);
+			snake.OnCollide (Type.Obstacle, other.gameObject);
 		else if (other.tag == "Food") {
-			snake.OnCollide (Type.Fruit);
+			snake.OnCollide (Type.Fruit, other.gameObject);
 			Destroy (other.gameObject);
 		}
 	}

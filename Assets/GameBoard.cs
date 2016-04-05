@@ -9,13 +9,14 @@ public class GameBoard : MonoBehaviour {
 	CellsGrid grid;
 	void Awake(){
 		grid = GetComponentInChildren<CellsGrid> ();
+		GameMaster.Instance.OnFruitEaten += FruitEaten;
 	}
 
 	void Start(){
 		SpawnFruit ();
 	}
 
-	public void FruitEaten(){
+	public void FruitEaten(Fruit f){
 //		(grid.GetCell (coord) as SimpleCell).CellType = SimpleCell.Type.Floor;
 		SpawnFruit ();
 	}

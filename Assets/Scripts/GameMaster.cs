@@ -3,26 +3,21 @@ using UnityEngine.UI;
 using System.Collections;
 
 public class GameMaster : MonoBehaviour {
-	public Snake Snake;
-
 	public static GameMaster Instance;
-	public GameBoard board;
 
 	void Awake(){
 		Instance = this;
 	}
 
 	public void GameOver(){
-		print ("GameOver");
 		Time.timeScale = 0;
 		if (OnGameOver != null)
 			OnGameOver ();
 	}
 
-	public void FruitEaten(){
-		board.FruitEaten ();
+	public void FruitEaten(Fruit food){
 		if(OnFruitEaten != null)
-			OnFruitEaten();
+			OnFruitEaten(food);
 	}
 
 	public void Restart(){
@@ -31,7 +26,7 @@ public class GameMaster : MonoBehaviour {
 			OnRestart ();
 	}
 
-	public event System.Action OnFruitEaten;
+	public event System.Action<Fruit> OnFruitEaten;
 	public event System.Action OnRestart;
 	public event System.Action OnGameOver;
 }

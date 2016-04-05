@@ -15,12 +15,8 @@ public class Snake : Stepable {
 		spawner.UpdateStep ();
 	}
 
-	public void OnCollide(SnakeCollider.Type type){
+	public void OnCollide(SnakeCollider.Type type, GameObject go){
 		switch (type) {
-		case SnakeCollider.Type.Fruit:
-			spawner.ToSpawn++;
-			GameMaster.Instance.FruitEaten ();
-			return;
 		case SnakeCollider.Type.Obstacle:
 		case SnakeCollider.Type.Wall:
 			GameMaster.Instance.GameOver ();
@@ -28,5 +24,10 @@ public class Snake : Stepable {
 		default:
 			break;
 		}
+	}
+
+	public void EatFruit(Fruit f){
+		spawner.Spawn (f);
+		GameMaster.Instance.FruitEaten (f);
 	}
 }

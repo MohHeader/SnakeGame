@@ -34,7 +34,7 @@ public class SnakeMovment : MonoBehaviour {
 
 	public void MoveTo(Coord coord){
 		if (grid.Contains (coord) == false) {
-			GetComponent<Snake> ().OnCollide (SnakeCollider.Type.Wall);	
+			GetComponent<Snake> ().OnCollide (SnakeCollider.Type.Wall, null);	
 			return;
 		}
 		cPosition = coord;
