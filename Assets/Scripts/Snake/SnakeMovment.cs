@@ -9,6 +9,11 @@ public class SnakeMovment : MonoBehaviour {
 	public Queue<Coord> DirectionList = new Queue<Coord>();
 
 	void Start () {
+		ResetSnake ();
+		GameMaster.Instance.OnRestart += ResetSnake;
+	}
+
+	void ResetSnake(){
 		MoveTo(new Coord(grid.size.x/2,grid.size.y/2));
 		SetDirection (new Coord[]{Coord.up, Coord.down, Coord.left, Coord.right}[Random.Range(0,4)]);
 	}

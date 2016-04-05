@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class GameMaster : MonoBehaviour {
@@ -6,20 +7,31 @@ public class GameMaster : MonoBehaviour {
 
 	public static GameMaster Instance;
 	public GameBoard board;
+
 	void Awake(){
-		if (Instance == null)
-			Instance = this;
-		else if (Instance != this)
-			Destroy (gameObject);
-		DontDestroyOnLoad (gameObject);
+		Instance = this;
 	}
 
 	public void GameOver(){
 		print ("GameOver");
 		Time.timeScale = 0;
+		if (OnGameOver != null)
+			OnGameOver ();
 	}
 
-	public void SpawnFruit(){
-		board.SpawnFruit ();
+	public void FruitEaten(){
+		board.FruitEaten ();
+		if(OnFruitEaten != null)
+			OnFruitEaten();
 	}
+
+	public void Restart(){
+		Time.timeScale = 1;
+		if (OnRestart != null)
+			OnRestart ();
+	}
+
+	public event System.Action OnFruitEaten;
+	public event System.Action OnRestart;
+	public event System.Action OnGameOver;
 }

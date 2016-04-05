@@ -29,5 +29,10 @@ public class SnakeFollower : MonoBehaviour {
 			OnMoved (LastPosition);
 	}
 
+	void OnDestroy(){
+		if(Followed != null)
+			Followed.OnMoved -= OnFollowedMove;
+	}
+
 	public event System.Action<Vector3> OnMoved;
 }

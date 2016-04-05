@@ -19,7 +19,7 @@ public class Snake : Stepable {
 		switch (type) {
 		case SnakeCollider.Type.Fruit:
 			spawner.ToSpawn++;
-			GameMaster.Instance.SpawnFruit ();
+			GameMaster.Instance.FruitEaten ();
 			return;
 		case SnakeCollider.Type.Obstacle:
 		case SnakeCollider.Type.Wall:

@@ -2,14 +2,15 @@
 using System.Collections;
 
 public class SimpleCell : Cell {
-
-	// Use this for initialization
-	void Start () {
-	
+	public enum Type{
+		Floor,
+		Fruit,
+		Wall
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+
+	Type cellType;
+	public Type CellType{
+		get{ return cellType; }
+		set{ cellType = value; }
 	}
 }
