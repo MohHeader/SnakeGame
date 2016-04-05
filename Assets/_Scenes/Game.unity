@@ -342,6 +342,7 @@ GameObject:
   - 114: {fileID: 576781398}
   - 114: {fileID: 576781399}
   - 114: {fileID: 576781400}
+  - 114: {fileID: 576781401}
   m_Layer: 0
   m_Name: Master
   m_TagString: Untagged
@@ -421,6 +422,17 @@ MonoBehaviour:
     y: 2
   grid: {fileID: 1660057196}
   ObstaclePrefab: {fileID: 110488, guid: 12bd6f9e3d6ad4a7d87835809fa5ffe6, type: 2}
+--- !u!114 &576781401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 576781395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8263d163e0155440da3f6a4f60747bd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &906854688
 GameObject:
   m_ObjectHideFlags: 0
@@ -650,6 +662,7 @@ GameObject:
   - 92: {fileID: 1069029461}
   - 124: {fileID: 1069029460}
   - 81: {fileID: 1069029459}
+  - 114: {fileID: 1069029464}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -724,6 +737,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!114 &1069029464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1069029458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6704f6f26ce934bdf9c5c1b8ef4e9873, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shake_decay: 0.2
+  shake_intensity: 0.1
 --- !u!1 &1381474227
 GameObject:
   m_ObjectHideFlags: 0

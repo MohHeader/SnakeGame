@@ -11,6 +11,7 @@ public class GameMaster : MonoBehaviour {
 
 	public void GameOver(){
 		Time.timeScale = 0;
+		Camera.main.GetComponent<CameraShake> ().Shake ();
 		if (OnGameOver != null)
 			OnGameOver ();
 	}

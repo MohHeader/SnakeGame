@@ -13,7 +13,7 @@ public class GameBoard : MonoBehaviour {
 	}
 
 	void Start(){
-		SpawnFruit ();
+		Invoke ("SpawnFruit", 0.2f);
 	}
 
 	public void FruitEaten(Fruit f){
